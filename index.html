@@ -448,12 +448,74 @@
         
         /* ===== Responsive Breakpoints ===== */
         
-       @media (max-width: 1024px) {
+        @media (max-width: 1024px) {
             .cursor-dot, .dots-bg {
                 display: none !important;
             }
             body {
                 cursor: default !important;
+            }
+            header {
+                padding: 10px 20px;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+            .hero {
+                padding: 40px 0 20px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            .contact-item {
+                margin-bottom: 10px;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .skills-container {
+                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+            }
+            .skill-card {
+                padding: 8px;
+            }
+            .skill-name {
+                font-size: 0.7rem;
+            }
+            .timeline-item, .project-card, .activity-item {
+                margin-bottom: 15px;
+            }
+            .item-title, .project-title, .activity-item h3 {
+                font-size: 1rem;
+            }
+            .item-description, .project-description, .activity-item .item-description {
+                font-size: 0.9rem;
+            }
+            .tech-tag {
+                font-size: 0.7rem;
+            }
+            .project-link {
+                font-size: 0.8rem;
+            }
+            .social-links {
+                gap: 15px;
+            }
+            .social-link {
+                font-size: 1.2rem;
+            }
+            .copyright {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -1020,9 +1082,17 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+                const target = this.getAttribute('href');
+                const targetElement = document.querySelector(target);
+                const offset = 60; // Adjust this value based on your header height
+
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
+
+                // Adjust scroll position to account for header height
+                window.scrollBy(0, -offset);
             });
         });
 
