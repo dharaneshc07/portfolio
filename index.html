@@ -44,20 +44,6 @@
             background-size: 30px 30px;
             z-index: -1;
         }
-        
-        .cursor-dot {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background-color: var(--accent);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease;
-        }
-       
-        
         /* ===== Base Layout ===== */
         .container {
             max-width: 1200px;
@@ -485,7 +471,14 @@
                     <i class="fas fa-envelope"></i>
                     <a href="mailto:Dharaneshchandrashekar@gmail.com">dharaneshchandrashekar@gmail.com</a>
                 </div>
-                
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <a href="https://github.com/dharaneshc07">dharaneshc07</i></a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                     <a href="https://www.linkedin.com/in/dharanesh-chandrashekar-47a5aa2b3/">Dharanesh Chandrashekar</i></a>
+                </div>
             </div>
         </div>
     </section>
@@ -967,40 +960,6 @@
     </footer>
 
     <script>
-        // Enhanced cursor dot effect
-        const cursorDot = document.querySelector('.cursor-dot');
-        const dots = [];
-        const dotCount = 12;
-        
-        // Create trailing dots
-        for (let i = 0; i < dotCount; i++) {
-            const dot = document.createElement('div');
-            dot.className = 'cursor-dot';
-            dot.style.width = `${20 - (i * 1.5)}px`;
-            dot.style.height = `${20 - (i * 1.5)}px`;
-            dot.style.opacity = `${1 - (i * 0.08)}`;
-            dot.style.transition = `transform 0.${i + 1}s ease, opacity 0.${i + 1}s ease`;
-            document.body.appendChild(dot);
-            dots.push(dot);
-        }
-        
-        // Main cursor movement
-        document.addEventListener('mousemove', (e) => {
-            const { clientX: x, clientY: y } = e;
-            
-            // Update main cursor dot
-            cursorDot.style.left = `${x}px`;
-            cursorDot.style.top = `${y}px`;
-            
-            // Update trailing dots with delay
-            dots.forEach((dot, index) => {
-                setTimeout(() => {
-                    dot.style.left = `${x}px`;
-                    dot.style.top = `${y}px`;
-                }, index * 30);
-            });
-        });
-        
         // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
