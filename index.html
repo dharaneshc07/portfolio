@@ -81,6 +81,31 @@ header {
     box-sizing: border-box;
 }
 
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 0;
+    list-style: none;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 5px 10px;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
@@ -118,6 +143,8 @@ header {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center; /* Center align on desktop */
+    align-items: center;
 }
 
 .contact-item {
@@ -405,6 +432,88 @@ footer {
     font-size: 0.9rem;
 }
 
+/* ===== Responsive Breakpoints ===== */
+
+@media (max-width: 1024px) {
+    .cursor-dot, .dots-bg {
+        display: none !important;
+    }
+    body {
+        cursor: default !important;
+    }
+    header {
+        padding: 10px 20px;
+    }
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0;
+    }
+    nav ul li {
+        margin: 0 5px; /* Adjusted margin */
+        flex: 1;
+        text-align: center;
+    }
+    nav a {
+        font-size: 0.8rem;
+        padding: 6px 10px; /* Adjusted padding */
+        display: block;
+    }
+    .hero {
+        padding: 40px 0 20px;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .contact-info {
+        justify-content: flex-start; /* Left align on mobile */
+        padding: 0 20px; /* Optional: Add some padding for better spacing */
+    }
+    .contact-item {
+        margin-bottom: 10px;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .skills-container {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    }
+    .skill-card {
+        padding: 8px;
+    }
+    .skill-name {
+        font-size: 0.7rem;
+    }
+    .timeline-item, .project-card, .activity-item {
+        margin-bottom: 15px;
+    }
+    .item-title, .project-title, .activity-item h3 {
+        font-size: 1rem;
+    }
+    .item-description, .project-description, .activity-item .item-description {
+        font-size: 0.9rem;
+    }
+    .tech-tag {
+        font-size: 0.7rem;
+    }
+    .project-link {
+        font-size: 0.8rem;
+    }
+    .social-links {
+        gap: 15px;
+    }
+    .social-link {
+        font-size: 1.2rem;
+    }
+    .copyright {
+        font-size: 0.8rem;
+    }
+}
 /* ===== Responsive Breakpoints ===== */
 
 @media (max-width: 1024px) {
