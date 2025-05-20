@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,6 +43,20 @@
             background-size: 30px 30px;
             z-index: -1;
         }
+        
+        .cursor-dot {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+       
+        
         /* ===== Base Layout ===== */
         .container {
             max-width: 1200px;
@@ -433,6 +446,125 @@
             font-size: 0.9rem;
         }
         
+        /* ===== Responsive Breakpoints ===== */
+        
+        /* Tablets (768px - 1024px) */
+        @media (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .skills-container {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            }
+        }
+        
+        /* Small Tablets (600px - 768px) */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                gap: 15px;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            .section-title {
+                font-size: 1.7rem;
+                margin-bottom: 30px;
+            }
+        }
+        
+        /* Mobile Devices (up to 600px) */
+        @media (max-width: 600px) {
+            nav ul {
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+            
+            nav a {
+                font-size: 0.6rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-container {
+                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+                gap: 10px;
+            }
+            
+            .skill-card {
+                padding: 10px 5px;
+            }
+            
+            .skill-icon {
+                width: 25px;
+                height: 25px;
+            }
+            
+            .skill-name {
+                font-size: 0.7rem;
+            }
+            
+            .timeline-item {
+                padding: 20px;
+            }
+            
+            .item-title {
+                font-size: 1.1rem;
+            }
+        }
+        
+        /* Small Mobile Devices (up to 400px) */
+        @media (max-width: 400px) {
+            nav ul {
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+            
+            nav a {
+                font-size: 0.9rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+        @media (max-width: 1024px) {
+    body {
+        cursor: default !important;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -465,19 +597,11 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
-                    <a href="tel:+07553995656">+44 7553995656</a>
+                    <a href="tel:+07553995656">07553995656</a>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
-                    <a href="mailto:Dharaneshchandrashekar@gmail.com">dharaneshchandrashekar@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/dharaneshc07">dharaneshc07</i></a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                     <a href="https://www.linkedin.com/in/dharanesh-chandrashekar-47a5aa2b3/">Dharanesh Chandrashekar</i></a>
+                    <a href="mailto:Dharaneshchandrashekar@gmail.com">Dharaneshchandrashekar@gmail.com</a>
                 </div>
             </div>
         </div>
@@ -960,40 +1084,73 @@
     </footer>
 
     <script>
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+    if (window.innerWidth > 1024) {
+        const cursorDot = document.querySelector('.cursor-dot');
+        const dots = [];
+        const dotCount = 12;
+
+        for (let i = 0; i < dotCount; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'cursor-dot';
+            dot.style.width = `${20 - (i * 1.5)}px`;
+            dot.style.height = `${20 - (i * 1.5)}px`;
+            dot.style.opacity = `${1 - (i * 0.08)}`;
+            dot.style.transition = `transform 0.${i + 1}s ease, opacity 0.${i + 1}s ease`;
+            document.body.appendChild(dot);
+            dots.push(dot);
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            const { clientX: x, clientY: y } = e;
+            cursorDot.style.left = `${x}px`;
+            cursorDot.style.top = `${y}px`;
+            dots.forEach((dot, index) => {
+                setTimeout(() => {
+                    dot.style.left = `${x}px`;
+                    dot.style.top = `${y}px`;
+                }, index * 30);
             });
         });
+    } else {
+        // Remove custom cursor for mobile/tablet
+        const existingDots = document.querySelectorAll('.cursor-dot');
+        existingDots.forEach(dot => dot.remove());
 
-        // Animation on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.timeline-item, .project-card, .skill-card, .activity-item, .education-item, .module-item');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
+        // Reset default cursor style
+        document.body.style.cursor = 'default';
+    }
+
+    // Smooth scroll stays regardless of device
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
-        };
-
-        // Set initial state
-        document.querySelectorAll('.timeline-item, .project-card, .skill-card, .activity-item, .education-item, .module-item').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            element.style.transition = 'all 0.5s ease';
         });
+    });
 
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-    </script>
+    // Scroll animations
+    const animateOnScroll = () => {
+        const elements = document.querySelectorAll('.timeline-item, .project-card, .skill-card, .activity-item, .education-item, .module-item');
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            if (elementPosition < screenPosition) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    };
+
+    document.querySelectorAll('.timeline-item, .project-card, .skill-card, .activity-item, .education-item, .module-item').forEach(element => {
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(20px)';
+        element.style.transition = 'all 0.5s ease';
+    });
+
+    window.addEventListener('scroll', animateOnScroll);
+    window.addEventListener('load', animateOnScroll);
+</script>
 </body>
 </html>
