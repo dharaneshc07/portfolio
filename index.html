@@ -200,45 +200,49 @@
         }
         
         /* ===== Skills Section ===== */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-            gap: 15px;
-        }
-        
-        .skill-card {
-            background: white;
-            border-radius: 8px;
-            padding: 12px 8px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .skill-icon {
-            width: 30px;
-            height: 30px;
-            object-fit: contain;
-            margin-bottom: 8px;
-        }
-        
-        .skill-name {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text);
-            text-align: center;
-            padding-top: 4px;
-        }
-        .skill-card:hover .skill-name {
-              color: var(--primary);
-        }
+    .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 15px;
+}
+
+.skill-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(96, 165, 250, 0.2);
+}
+
+.skill-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+.skill-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #00ffff;
+    text-shadow: 0 0 6px #0ff, 0 0 12px #0ff;
+    text-align: center;
+    padding-top: 4px;
+}
+
+.skill-card:hover .skill-name {
+    color: #fff;
+    text-shadow: 0 0 10px var(--primary), 0 0 20px var(--accent);
+}
 
         
         /* ===== Experience & Education ===== */
@@ -581,14 +585,14 @@
         .timeline-item,
         .project-card,
         .education-item,
-        .activity-item,
-        .skill-card {
+        .activity-item {
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
     }
+
         .timeline-item:hover,
         .project-card:hover,
         .education-item:hover,
@@ -1242,7 +1246,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // ===== TYPEWRITER EFFECT =====
     const typewriterElement = document.querySelector('.typewriter');
-    const words = ["a Data Scientist.", "a Developer.", "a Problem Solver.", "an Analyst."];
+    const words = ["learning every day.","exploring Data Science.","building projects.","curious about tech.","growing as a developer.","passionate about code.","solving small problems.",
+  "experimenting with Python.",
+  "learning from mistakes.",
+  "debugging patiently.",
+  "writing clean code.",
+  "diving into AI basics.",
+  "dreaming in algorithms.",
+  "curious about machine learning.",
+  "eager to collaborate.",
+  "a student of innovation.",
+  "open to challenges.",
+  "building my first portfolio."
+];
+
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
