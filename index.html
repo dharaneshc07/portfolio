@@ -230,11 +230,16 @@
         }
         
         .skill-name {
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             font-weight: 600;
-            color: #1f2937;
+            color: var(--text);
             text-align: center;
+            padding-top: 4px;
         }
+        .skill-card:hover .skill-name {
+              color: var(--primary);
+        }
+
         
         /* ===== Experience & Education ===== */
         .timeline-item {
@@ -425,17 +430,6 @@
             transform: translateX(5px);
         }
 
-        .certificates-embed {
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        transition: transform 0.3s;
-    }
-
-    .certificates-embed:hover {
-    transform: scale(1.01);
-    }
-
         /* ===== Footer ===== */
         footer {
             background-color: var(--card-bg);
@@ -613,6 +607,28 @@
 @keyframes blink {
     50% { opacity: 0; }
 }
+    .footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.footer-btn {
+  background-color: var(--primary);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.footer-btn:hover {
+  background-color: var(--secondary);
+}
 
     </style>
 </head>
@@ -633,7 +649,6 @@
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#activities">Activities</a></li>
-                    <li><a href="#certificates">Certificates</a></li>
                 </ul>
             </nav>
         </div>
@@ -1001,7 +1016,7 @@
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">NLPAug</span>
-                            <span class="tech-tag">ROberta</span>
+                            <span class="tech-tag">RoBERTa</span>
                             <span class="tech-tag">Logistic Regression</span>
                         </div>
                     </div>
@@ -1129,33 +1144,24 @@
             </div>
         </div>
     </section>
-    <!-- Certificates Section -->
-    <section id="certificates" class="section">
-      <div class="container">
-        <h2 class="section-title">Certificates Gallery</h2>
-        <div class="certificates-embed">
-          <iframe 
-            src="https://drive.google.com/embeddedfolderview?id=14QiqxXH99b46m4Tyxa8bmq3cOR0zllkS#grid" 
-            style="width:100%; height:600px; border:none;">
-          </iframe>
-        </div>
-      </div>
-    </section>
 
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/dharanesh-chandrashekar-47a5aa2b3/" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/dharaneshc07" class="social-link"><i class="fab fa-github"></i></a>
-            </div>
+            <div class="footer-buttons">
+            <a href="https://drive.google.com/drive/folders/14QiqxXH99b46m4Tyxa8bmq3cOR0zllkS?usp=sharing" class="footer-btn" target="_blank" rel="noopener">📜 Certificates</a>
+            <a href="https://drive.google.com/file/d/1O6lOwSoGGw8uUFlU3mNIVQMxXxBd23Vo/view?usp=sharing" class="footer-btn" target="_blank" rel="noopener">📄 Resume</a>
+        </div>
+
             <p class="copyright">© 2025 Dharanesh Chandrashekar. All rights reserved.</p>
         </div>
     </footer>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
 
-    <script>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+    // ===== CUSTOM CURSOR =====
     if (window.innerWidth > 1024) {
         const cursorDot = document.querySelector('.cursor-dot');
         const dots = [];
@@ -1184,15 +1190,12 @@
             });
         });
     } else {
-        // Remove custom cursor for mobile/tablet
-        const existingDots = document.querySelectorAll('.cursor-dot');
-        existingDots.forEach(dot => dot.remove());
-
-        // Reset default cursor style
+        // Remove all custom cursor elements on tablets/mobiles
+        document.querySelectorAll('.cursor-dot').forEach(dot => dot.remove());
         document.body.style.cursor = 'default';
     }
 
-    // Smooth scroll stays regardless of device
+    // ===== SMOOTH SCROLL =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -1202,7 +1205,7 @@
         });
     });
 
-    // Scroll animations
+    // ===== SCROLL ANIMATIONS =====
     const animateOnScroll = () => {
         const elements = document.querySelectorAll('.timeline-item, .project-card, .skill-card, .activity-item, .education-item, .module-item');
         elements.forEach(element => {
@@ -1223,6 +1226,8 @@
 
     window.addEventListener('scroll', animateOnScroll);
     window.addEventListener('load', animateOnScroll);
+
+    // ===== VANILLA TILT =====
     VanillaTilt.init(document.querySelectorAll(
       ".skill-card, .timeline-item, .project-card, .education-item, .activity-item"
     ), {
@@ -1230,8 +1235,12 @@
       speed: 400,
       glare: true,
       "max-glare": 0.2,
-      scale: 1.03
+      scale: 1.03,
+      gyroscope: true 
     });
+
+
+    // ===== TYPEWRITER EFFECT =====
     const typewriterElement = document.querySelector('.typewriter');
     const words = ["a Data Scientist.", "a Developer.", "a Problem Solver.", "an Analyst."];
     let wordIndex = 0;
@@ -1257,7 +1266,8 @@
     }
 
     type();
-
+});
 </script>
+
 </body>
 </html>
