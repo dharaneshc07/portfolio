@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dharanesh Chandrashekar</title>
+    <!-- Add this inside your <head> tag -->
+    <meta name="description" content="Dharanesh Chandrashekar - Data Scientist Portfolio featuring projects, skills, experience, education, and certifications.">
+    <meta name="keywords" content="Dharanesh Chandrashekar, Data Science Portfolio, Machine Learning, AI, Developer, Python, Cardiff">
+    <meta name="author" content="Dharanesh Chandrashekar">
+    <meta property="og:title" content="Dharanesh Chandrashekar - Portfolio">
+    <meta property="og:description" content="Showcasing my work in data science, machine learning, and development.">
+    <meta property="og:url" content="https://dharanesh.vercel.app/">
+    <meta property="og:type" content="website">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -415,7 +424,18 @@
         .activity-item:hover {
             transform: translateX(5px);
         }
-        
+
+        .certificates-embed {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        transition: transform 0.3s;
+    }
+
+    .certificates-embed:hover {
+    transform: scale(1.01);
+    }
+
         /* ===== Footer ===== */
         footer {
             background-color: var(--card-bg);
@@ -564,6 +584,35 @@
         cursor: default !important;
     }
 }
+        .timeline-item,
+        .project-card,
+        .education-item,
+        .activity-item,
+        .skill-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+    }
+        .timeline-item:hover,
+        .project-card:hover,
+        .education-item:hover,
+        .activity-item:hover,
+        .skill-card:hover {
+        box-shadow: 0 0 20px var(--primary), 0 0 30px rgba(59, 130, 246, 0.4);
+        transition: box-shadow 0.4s ease;
+    }
+        .typewriter::after {
+        content: '|';
+        animation: blink 1s step-start infinite;
+        color: var(--primary);
+        margin-left: 5px;
+    }
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
 
     </style>
 </head>
@@ -584,6 +633,7 @@
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#activities">Activities</a></li>
+                    <li><a href="#certificates">Certificates</a></li>
                 </ul>
             </nav>
         </div>
@@ -592,7 +642,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1><span>Hello!</span></h1>
+            <h1><span>Hello!</span> I'm <span class="typewriter"></span></h1>
             <p>Thank you for taking the time to review my portfolio. I am currently seeking new job opportunities across world and would love to connect. If my skills and experience align with your needs, please feel free to reach out. I look forward to the possibility of working together.</p>
             <div class="contact-info">
                 <div class="contact-item">
@@ -1079,6 +1129,18 @@
             </div>
         </div>
     </section>
+    <!-- Certificates Section -->
+    <section id="certificates" class="section">
+      <div class="container">
+        <h2 class="section-title">Certificates Gallery</h2>
+        <div class="certificates-embed">
+          <iframe 
+            src="https://drive.google.com/embeddedfolderview?id=14QiqxXH99b46m4Tyxa8bmq3cOR0zllkS#grid" 
+            style="width:100%; height:600px; border:none;">
+          </iframe>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer id="contact">
@@ -1090,6 +1152,8 @@
             <p class="copyright">© 2025 Dharanesh Chandrashekar. All rights reserved.</p>
         </div>
     </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
 
     <script>
     if (window.innerWidth > 1024) {
@@ -1159,6 +1223,41 @@
 
     window.addEventListener('scroll', animateOnScroll);
     window.addEventListener('load', animateOnScroll);
+    VanillaTilt.init(document.querySelectorAll(
+      ".skill-card, .timeline-item, .project-card, .education-item, .activity-item"
+    ), {
+      max: 15,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.2,
+      scale: 1.03
+    });
+    const typewriterElement = document.querySelector('.typewriter');
+    const words = ["a Data Scientist.", "a Developer.", "a Problem Solver.", "an Analyst."];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        const currentWord = words[wordIndex];
+        const visibleText = currentWord.substring(0, charIndex);
+        typewriterElement.textContent = visibleText;
+
+        if (!isDeleting && charIndex < currentWord.length) {
+            charIndex++;
+            setTimeout(type, 120);
+        } else if (isDeleting && charIndex > 0) {
+            charIndex--;
+            setTimeout(type, 60);
+        } else {
+            isDeleting = !isDeleting;
+            if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
+            setTimeout(type, 1000);
+        }
+    }
+
+    type();
+
 </script>
 </body>
 </html>
