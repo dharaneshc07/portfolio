@@ -198,12 +198,21 @@
             color: var(--primary);
         }
         
-        /* ===== Section Titles ===== */
+        /* ===== Section Header Layout ===== */
+        .skills-header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
         .section-title {
             font-size: 2rem;
-            margin-bottom: 40px;
             position: relative;
             display: inline-block;
+            margin-bottom: 10px;
         }
         
         .section-title::after {
@@ -215,6 +224,37 @@
             height: 4px;
             background-color: var(--primary);
             border-radius: 2px;
+        }
+
+        /* Compact Top-Right Corner Legend */
+        .skills-legend-corner {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.75rem;
+            color: #9ca3af;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        .legend-dot-core {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+
+        .legend-dot-std {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            margin-right: 4px;
         }
         
         /* ===== Skills Section ===== */
@@ -285,20 +325,6 @@
             border-radius: 6px;
             font-size: 0.85rem;
             font-weight: 400;
-        }
-
-        .skills-legend {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 25px;
-            font-size: 0.85rem;
-            color: #d1d5db;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
         /* Tool Tags in Experience and Projects */
@@ -660,7 +686,6 @@
             
             .section-title {
                 font-size: 1.7rem;
-                margin-bottom: 30px;
             }
         }
         
@@ -760,14 +785,12 @@
     <!-- Technical Skills Section -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
             
-            <div class="skills-legend">
-                <div class="legend-item">
-                    <span class="skill-badge-core">Core Competencies</span>
-                </div>
-                <div class="legend-item">
-                    <span class="skill-badge">Technologies & Frameworks</span>
+            <div class="skills-header-wrapper">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-legend-corner">
+                    <span><span class="legend-dot-core"></span>Core Competencies</span>
+                    <span><span class="legend-dot-std"></span>Tools & Frameworks</span>
                 </div>
             </div>
 
