@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dharanesh | Data Analyst Portfolio</title>
+    <title>Dharanesh | Data Analyst & AI Portfolio</title>
     
-    <meta name="description" content="Dharanesh Chandrashekar - Data Analyst Portfolio featuring projects, skills, experience, education, and certifications.">
-    <meta name="keywords" content="Dharanesh Chandrashekar, Data Analyst Portfolio, SQL, Python, Power BI, Data Visualization, Analytics, Cardiff">
+    <meta name="description" content="Dharanesh Chandrashekar - Data Analyst & AI Specialist Portfolio featuring projects, skills, experience, education, publications, and certifications.">
+    <meta name="keywords" content="Dharanesh Chandrashekar, Data Analyst Portfolio, SQL, Python, Machine Learning, Power BI, AI, Cardiff">
     <meta name="author" content="Dharanesh Chandrashekar">
-    <meta property="og:title" content="Dharanesh Chandrashekar - Data Analyst Portfolio">
-    <meta property="og:description" content="Showcasing my work in data analysis, SQL querying, data visualization, and statistical modeling.">
+    <meta property="og:title" content="Dharanesh Chandrashekar - Portfolio">
+    <meta property="og:description" content="Showcasing my work in data analysis, machine learning, SQL querying, and AI development.">
     <meta property="og:url" content="https://dharanesh.vercel.app/">
     <meta property="og:type" content="website">
 
@@ -265,6 +265,32 @@
             font-size: 0.85rem;
             font-weight: 500;
         }
+
+        /* Tool Tags in Experience and Projects */
+        .tools-container {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tools-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tech-tag {
+            background-color: #1e40af;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
         
         /* ===== Experience & Education ===== */
         .timeline-item {
@@ -354,6 +380,71 @@
         .module-text {
             font-size: 0.9rem;
         }
+
+        /* ===== Dual Section Grid (Publications & Certifications) ===== */
+        .dual-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .info-card {
+            background-color: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            border-top: 4px solid var(--accent);
+            height: 100%;
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+        }
+
+        .info-card h3 i {
+            color: var(--accent);
+        }
+
+        .card-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card-list li {
+            position: relative;
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        .card-list li::before {
+            content: "•";
+            color: var(--primary);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -4px;
+        }
+
+        .badge-impact {
+            display: inline-block;
+            background-color: rgba(245, 158, 11, 0.2);
+            color: var(--highlight);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            font-weight: 600;
+        }
         
         /* ===== Projects ===== */
         .projects-grid {
@@ -407,22 +498,6 @@
             flex-grow: 1;
         }
         
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-        
-        .tech-tag {
-            background-color: #1e40af;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
         .project-link {
             display: inline-flex;
             align-items: center;
@@ -435,6 +510,7 @@
             background-color: var(--primary);
             transition: background-color 0.3s;
             align-self: flex-start;
+            margin-top: 15px;
         }
         
         .project-link:hover {
@@ -565,6 +641,7 @@
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#experience">Experience</a></li>
+                    <li><a href="#publications">Publications</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#activities">Activities</a></li>
                 </ul>
@@ -577,8 +654,8 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Hello! I'm <span class="highlight-text">Dharanesh Chandrashekar</span></h1>
-                <h2><span class="typewriter">Data Analyst & Analytics Specialist</span></h2>
-                <p>A detail-oriented Data Analyst proficient in SQL, Python, statistical modeling, and data visualization tools like Power BI and Plotly. Experienced in transforming raw complex datasets into strategic business insights, optimizing ETL processes, and building interactive performance dashboards. Seeking opportunities to drive data-informed decision-making in dynamic organizations.</p>
+                <h2><span class="typewriter">Data Analyst & AI Specialist</span></h2>
+                <p>A detail-oriented Data Analyst proficient in SQL, Python, Machine Learning, Prompt Engineering, and Business Intelligence tools. Experienced in building AI-powered data pipelines, optimizing relational database queries, and translating complex data into strategic business insights. Seeking opportunities to drive data-informed decision-making in dynamic organizations.</p>
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
@@ -606,9 +683,9 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <p>I am a Data Analyst with a solid background in Information Science Engineering and a Master's degree in Data Science and Analytics from Cardiff University. I specialize in turning ambiguous, messy data into actionable intelligence through SQL queries, statistical analysis, and interactive dashboard creation.</p>
+                <p>I am a Data Analyst with a solid background in Information Science Engineering and a Master's degree in Data Science and Analytics from Cardiff University. I specialize in turning ambiguous, messy datasets into actionable intelligence using SQL, statistical modeling, machine learning, and interactive dashboard platforms.</p>
                 <br>
-                <p>Having worked across industry internships including IBM and Inventeron, I bring practical experience in optimizing database retrieval speed, cleaning multi-source relational data, and applying quantitative models to improve operational efficiency. I thrive on collaborating with stakeholders to deliver metrics that drive revenue and operational productivity.</p>
+                <p>Having worked across technical internships at IBM and Inventeron, I bring practical experience in optimizing database retrieval speed, designing ETL pipelines, fine-tuning ML models, and utilizing Prompt Engineering for AI workflows. I thrive on collaborating with cross-functional teams to solve complex problems through data.</p>
             </div>
         </div>
     </section>
@@ -621,17 +698,33 @@
                 
                 <div class="skill-category-card">
                     <div class="skill-category-header">
+                        <i class="fas fa-robot"></i>
+                        <h3>Machine Learning & AI</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Regression & Classification</span>
+                        <span class="skill-badge">Supervised / Unsupervised ML</span>
+                        <span class="skill-badge">Prompt Engineering</span>
+                        <span class="skill-badge">LLM Workflows</span>
+                        <span class="skill-badge">Natural Language Processing (NLP)</span>
+                        <span class="skill-badge">Random Forest & XGBoost</span>
+                        <span class="skill-badge">Neural Networks (ANN/CNN)</span>
+                    </div>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-category-header">
                         <i class="fas fa-database"></i>
                         <h3>Data Analysis & SQL</h3>
                     </div>
                     <div class="skill-tags">
-                        <span class="skill-badge">SQL Queries</span>
-                        <span class="skill-badge">PostgreSQL</span>
-                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">Complex SQL Queries</span>
+                        <span class="skill-badge">PostgreSQL & MySQL</span>
                         <span class="skill-badge">Data Wrangling</span>
                         <span class="skill-badge">ETL Pipelines</span>
                         <span class="skill-badge">Data Cleaning</span>
-                        <span class="skill-badge">Relational Databases</span>
+                        <span class="skill-badge">Database Design</span>
+                        <span class="skill-badge">BigQuery</span>
                     </div>
                 </div>
 
@@ -643,10 +736,9 @@
                     <div class="skill-tags">
                         <span class="skill-badge">Power BI</span>
                         <span class="skill-badge">Tableau</span>
-                        <span class="skill-badge">Dashboards</span>
+                        <span class="skill-badge">Interactive Dashboards</span>
                         <span class="skill-badge">Plotly & Dash</span>
-                        <span class="skill-badge">Matplotlib</span>
-                        <span class="skill-badge">Seaborn</span>
+                        <span class="skill-badge">Matplotlib & Seaborn</span>
                         <span class="skill-badge">KPI Tracking</span>
                     </div>
                 </div>
@@ -654,29 +746,16 @@
                 <div class="skill-category-card">
                     <div class="skill-category-header">
                         <i class="fas fa-code"></i>
-                        <h3>Programming Languages</h3>
+                        <h3>Programming & Frameworks</h3>
                     </div>
                     <div class="skill-tags">
                         <span class="skill-badge">Python</span>
                         <span class="skill-badge">PySpark</span>
-                        <span class="skill-badge">R</span>
-                        <span class="skill-badge">SAS</span>
-                        <span class="skill-badge">PHP</span>
-                        <span class="skill-badge">Shell Scripting</span>
-                    </div>
-                </div>
-
-                <div class="skill-category-card">
-                    <div class="skill-category-header">
-                        <i class="fas fa-cubes"></i>
-                        <h3>Python Libraries</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-badge">Pandas</span>
-                        <span class="skill-badge">NumPy</span>
-                        <span class="skill-badge">SciPy</span>
+                        <span class="skill-badge">Pandas & NumPy</span>
                         <span class="skill-badge">Scikit-Learn</span>
-                        <span class="skill-badge">Statsmodels</span>
+                        <span class="skill-badge">TensorFlow & Keras</span>
+                        <span class="skill-badge">R</span>
+                        <span class="skill-badge">PHP & Shell</span>
                     </div>
                 </div>
 
@@ -686,11 +765,11 @@
                         <h3>Mathematics & Statistics</h3>
                     </div>
                     <div class="skill-tags">
+                        <span class="skill-badge">Calculus & Numerical Methods</span>
                         <span class="skill-badge">Hypothesis Testing</span>
-                        <span class="skill-badge">Probability</span>
+                        <span class="skill-badge">Probability & Inference</span>
                         <span class="skill-badge">A/B Testing</span>
-                        <span class="skill-badge">Linear Algebra</span>
-                        <span class="skill-badge">Regression Analysis</span>
+                        <span class="skill-badge">Optimization Techniques</span>
                     </div>
                 </div>
 
@@ -704,6 +783,7 @@
                         <span class="skill-badge">Databricks</span>
                         <span class="skill-badge">Google Cloud Platform</span>
                         <span class="skill-badge">Jupyter Notebooks</span>
+                        <span class="skill-badge">VS Code</span>
                         <span class="skill-badge">Git & GitHub</span>
                     </div>
                 </div>
@@ -721,15 +801,19 @@
                 <div class="item-header">
                     <div>
                         <h3 class="item-title">MSc Data Science and Analytics</h3>
-                        <p class="item-subtitle">Cardiff University</p>
+                        <p class="item-subtitle">Cardiff University, UK</p>
                     </div>
                     <p class="item-date">Sep 2024 - Sep 2025</p>
                 </div>
                 <div class="item-description">
                     <p>Grade: <span class="highlight">Merit</span></p>
                     <div class="module-list">
-                        <p><strong>Key Analytics Modules:</strong></p>
+                        <p><strong>Key Modules:</strong></p>
                         <div class="module-grid">
+                            <div class="module-item">
+                                <i class="fas fa-robot module-icon"></i>
+                                <span class="module-text">Applied Machine Learning</span>
+                            </div>
                             <div class="module-item">
                                 <i class="fas fa-chart-pie module-icon"></i>
                                 <span class="module-text">Data Visualization</span>
@@ -740,15 +824,11 @@
                             </div>
                             <div class="module-item">
                                 <i class="fas fa-chart-bar module-icon"></i>
-                                <span class="module-text">Applied Statistics</span>
+                                <span class="module-text">Statistics</span>
                             </div>
                             <div class="module-item">
                                 <i class="fas fa-laptop-code module-icon"></i>
                                 <span class="module-text">Computational Data Science</span>
-                            </div>
-                            <div class="module-item">
-                                <i class="fas fa-robot module-icon"></i>
-                                <span class="module-text">Applied Machine Learning</span>
                             </div>
                             <div class="module-item">
                                 <i class="fas fa-chart-line module-icon"></i>
@@ -769,15 +849,31 @@
                 </div>
                 <div class="item-description">
                     <div class="module-list">
-                        <p><strong>Key Engineering Modules:</strong></p>
+                        <p><strong>Core Subjects:</strong></p>
                         <div class="module-grid">
                             <div class="module-item">
                                 <i class="fas fa-calculator module-icon"></i>
+                                <span class="module-text">Calculus & Numerical Methods</span>
+                            </div>
+                            <div class="module-item">
+                                <i class="fas fa-brain module-icon"></i>
+                                <span class="module-text">Machine Learning & AI</span>
+                            </div>
+                            <div class="module-item">
+                                <i class="fas fa-database module-icon"></i>
+                                <span class="module-text">Database Management Systems</span>
+                            </div>
+                            <div class="module-item">
+                                <i class="fas fa-chart-area module-icon"></i>
+                                <span class="module-text">Big Data Technologies</span>
+                            </div>
+                            <div class="module-item">
+                                <i class="fas fa-square-root-variable module-icon"></i>
                                 <span class="module-text">Statistics & Probability</span>
                             </div>
                             <div class="module-item">
                                 <i class="fas fa-code module-icon"></i>
-                                <span class="module-text">Python Programming</span>
+                                <span class="module-text">Python Application Programming</span>
                             </div>
                             <div class="module-item">
                                 <i class="fas fa-cloud module-icon"></i>
@@ -785,7 +881,7 @@
                             </div>
                             <div class="module-item">
                                 <i class="fas fa-terminal module-icon"></i>
-                                <span class="module-text">Unix & Shell Scripting</span>
+                                <span class="module-text">Unix & Shell Programming</span>
                             </div>
                         </div>
                     </div>
@@ -803,30 +899,47 @@
             <div class="timeline-item">
                 <div class="item-header">
                     <div>
-                        <h3 class="item-title">Database & Analytics Intern</h3>
+                        <h3 class="item-title">Database Intern</h3>
                         <p class="item-subtitle">IBM, India</p>
                     </div>
                     <p class="item-date">Oct 2023 - Jan 2024</p>
                 </div>
                 <div class="item-description">
-                    <p>• Optimized large-scale relational database handling and ETL workloads, <span class="highlight">increasing query execution efficiency by 30%</span> using SAS tools and SQL optimizations.</p>
-                    <p>• Refactored complex SQL scripts, index structures, and join operations, <span class="highlight">cutting analytics data processing time by 25%</span>.</p>
-                    <p>• Designed and maintained automated database schema structures, <span class="highlight">boosting analytical data retrieval speed by 20%</span> for reporting teams.</p>
+                    <p>• Optimized large-scale relational database handling and data extraction workflows, <span class="highlight">increasing overall efficiency by 30%</span> using SAS tools.</p>
+                    <p>• Improved SQL query performance and database indexing, <span class="highlight">cutting processing time by 25%</span>.</p>
+                    <p>• Designed and maintained structured database schemas, <span class="highlight">boosting data retrieval speed by 20%</span>.</p>
+                    
+                    <div class="tools-container">
+                        <span class="tools-title">Tools Used:</span>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">SAS</span>
+                        <span class="tech-tag">Database Management</span>
+                        <span class="tech-tag">ETL</span>
+                    </div>
                 </div>
             </div>
             
             <div class="timeline-item">
                 <div class="item-header">
                     <div>
-                        <h3 class="item-title">Data & ML Intern</h3>
+                        <h3 class="item-title">AI and ML Intern</h3>
                         <p class="item-subtitle">Inventeron, India</p>
                     </div>
                     <p class="item-date">May 2023 - Aug 2023</p>
                 </div>
                 <div class="item-description">
-                    <p>• Performed Exploratory Data Analysis (EDA) on quarterly retail datasets using Pandas, NumPy, and Matplotlib, <span class="highlight">improving forecasting precision by 15%</span>.</p>
-                    <p>• Prepared data pipelines through rigorous cleaning, outlier removal, and missing value imputation, <span class="highlight">increasing analytical model accuracy by 20%</span>.</p>
-                    <p>• Evaluated and tuned time series trend models to track KPI metrics, <span class="highlight">boosting prediction accuracy by 18%</span>.</p>
+                    <p>• Enhanced sales forecasting models, <span class="highlight">improving prediction accuracy by 15%</span> using NumPy, Pandas, and Matplotlib.</p>
+                    <p>• Executed data cleaning, feature engineering, and exploratory data analysis (EDA), <span class="highlight">boosting ML model performance by 20%</span>.</p>
+                    <p>• Optimized time-series trend analysis algorithms, <span class="highlight">increasing prediction reliability by 18%</span>.</p>
+                    
+                    <div class="tools-container">
+                        <span class="tools-title">Tools Used:</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">Matplotlib</span>
+                    </div>
                 </div>
             </div>
 
@@ -839,25 +952,88 @@
                     <p class="item-date">Sep 2022 - Dec 2022</p>
                 </div>
                 <div class="item-description">
-                    <p>• Integrated data streams from multiple REST APIs and optimized query responses, <span class="highlight">decreasing latency by 40%</span> for analytics pipelines.</p>
-                    <p>• Standardized data ingestion workflows to improve analytical scalability by 35% and overall processing speed by 25%.</p>
+                    <p>• Led data integration workflows and optimized API performance, <span class="highlight">decreasing query latency by 40%</span>.</p>
+                    <p>• <span class="highlight">Enhanced platform data scalability by 35%</span> and increased batch processing speed by 25%.</p>
+                    <p>• Upgraded database storage configuration, <span class="highlight">increasing retrieval speed by 20%</span>.</p>
+                    
+                    <div class="tools-container">
+                        <span class="tools-title">Tools Used:</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">REST APIs</span>
+                        <span class="tech-tag">Data Engineering</span>
+                        <span class="tech-tag">SQL</span>
+                    </div>
                 </div>
             </div>
             
             <div class="timeline-item">
                 <div class="item-header">
                     <div>
-                        <h3 class="item-title">Data Analytics Intern</h3>
+                        <h3 class="item-title">Data Science Intern</h3>
                         <p class="item-subtitle">ICT Academy, India</p>
                     </div>
                     <p class="item-date">Jun 2022 - Aug 2022</p>
                 </div>
                 <div class="item-description">
-                    <p>• Conducted deep-dive data preprocessing and feature scaling on structured tabular datasets, <span class="highlight">reducing data preparation overhead by 30%</span>.</p>
-                    <p>• Participated in hands-on workshops for PySpark, Big Data analytics, and statistical modeling with TensorFlow and Pandas.</p>
+                    <p>• Completed training on TensorFlow, Pandas, and Spark MLlib to develop big data analytical pipelines.</p>
+                    <p>• Fine-tuned hyper-parameters on machine learning algorithms, <span class="highlight">improving model accuracy by 25%</span>.</p>
+                    <p>• <span class="highlight">Reduced data preprocessing time by 30%</span> through efficient vectorization.</p>
+                    
+                    <div class="tools-container">
+                        <span class="tools-title">Tools Used:</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Spark MLlib</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- Publications & Certifications Section -->
+    <section id="publications" class="section">
+        <div class="container">
+            <div class="dual-grid">
+                
+                <!-- Publications -->
+                <div class="info-card">
+                    <h3><i class="fas fa-newspaper"></i> Publications</h3>
+                    <ul class="card-list">
+                        <li>
+                            <strong>“Speech Background Voice Suppression with Deep Learning”</strong>
+                            <br>
+                            Published in <em>World Journal of Engineering Research and Technology (WJERT)</em>.
+                            <br>
+                            <span class="badge-impact">SJIF Impact Factor: 7.029</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Professional Development & Certifications -->
+                <div class="info-card">
+                    <h3><i class="fas fa-certificate"></i> Professional Development</h3>
+                    <ul class="card-list">
+                        <li>
+                            <strong>Microsoft Certified: Azure Data Fundamentals (DP-900)</strong>
+                            <br>
+                            <small>Microsoft</small>
+                        </li>
+                        <li>
+                            <strong>Using BigQuery ML for Inference</strong>
+                            <br>
+                            <small>Google Skill Badge</small>
+                        </li>
+                        <li>
+                            <strong>Advanced SQL Course</strong>
+                            <br>
+                            <small>Kaggle Certification</small>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
         </div>
     </section>
 
@@ -870,119 +1046,120 @@
                 <div class="project-card">
                     <div class="project-content">
                         <div class="project-header">
-                            <h3 class="project-title">Interactive Global Quality of Life Dashboard</h3>
-                            <a href="https://github.com/dharaneshc07/Data-Visualization-" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
+                            <h3 class="project-title">Agentic-AI Expense Optimization</h3>
                         </div>
                         <p class="project-description">
-                            Engineered an interactive web dashboard analyzing socioeconomic metrics across 237 countries. Automated data wrangling pipelines for 10+ variables in Pandas, reducing data preprocessing time by 30% and building responsive visual insights using Plotly and Dash.
+                            A self-learning Agentic-AI system for expense management, implementing OCR and a human-in-the-loop ML framework. Integrates an Isolation Forest anomaly detection model and Prompt Engineering workflows deployed via Streamlit.
                         </p>
-                        <div class="project-tech">
+                        <div class="tools-container">
+                            <span class="tech-tag">Agentic-AI</span>
+                            <span class="tech-tag">Prompt Engineering</span>
+                            <span class="tech-tag">OCR</span>
+                            <span class="tech-tag">Streamlit</span>
+                        </div>
+                        <a href="https://github.com/dharaneshc07/dissertation" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Global Quality of Life Dashboard</h3>
+                        </div>
+                        <p class="project-description">
+                            An interactive dashboard analyzing 237 countries’ quality of life metrics. Automated data cleaning for 10+ numerical/categorical columns, reducing preprocessing time by 30% and improving visual analytics accuracy.
+                        </p>
+                        <div class="tools-container">
                             <span class="tech-tag">Dash</span>
                             <span class="tech-tag">Plotly</span>
                             <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">ETL</span>
-                        </div>  
+                            <span class="tech-tag">Data Visualization</span>
+                        </div>
+                        <a href="https://github.com/dharaneshc07/Data-Visualization-" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Code
+                        </a>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-content">
                         <div class="project-header">
-                            <h3 class="project-title">Agentic-AI Expense Analytics System</h3>
-                            <a href="https://github.com/dharaneshc07/dissertation" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
+                            <h3 class="project-title">Hate Speech Detection System</h3>
                         </div>
                         <p class="project-description">
-                            Built an end-to-end expense monitoring system utilizing OCR for receipt parsing and an Isolation Forest model to detect financial anomalies. Created a Streamlit user interface to visualize categorical spending patterns and facilitate human-in-the-loop review.
+                            Developed a hate speech detection NLP classifier using RoBERTa and traditional ML models, achieving 94% accuracy and optimizing F1-score by 15% through threshold tuning and class balancing.
                         </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Anomaly Detection</span>
-                            <span class="tech-tag">OCR</span>
-                            <span class="tech-tag">Streamlit</span>
-                        </div>  
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Banking Transaction Fraud Analytics</h3>
-                            <a href="https://github.com/dharaneshc07/Bank-fraud-detection-" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                        </div>
-                        <p class="project-description">
-                            Analyzed imbalanced financial transaction records to detect fraudulent activity. Employed SMOTE techniques and Random Forest classifiers to achieve 95% detection accuracy while lowering false positive error rates by 20%.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Scikit-learn</span>
-                            <span class="tech-tag">Statistical Analysis</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Pharmacy Operations & Inventory SQL System</h3>
-                            <a href="https://github.com/dharaneshc07/Pharmacy-management-System-" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                        </div>
-                        <p class="project-description">
-                            Architected a relational database management tool using SQL and PHP to track pharmacy stock levels and orders. Streamlined query search speeds, resulting in a 30% improvement in inventory update workflows.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">Relational DB</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">Database Architecture</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Text Classification & Sentiment Analytics</h3>
-                            <a href="https://github.com/dharaneshc07/Hate-Speach-Detection-" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                        </div>
-                        <p class="project-description">
-                            Performed text mining and sentiment classification across unstructured social datasets using RoBERTa and classical NLP techniques, attaining 94% classification accuracy with tuned precision-recall metrics.
-                        </p>
-                        <div class="project-tech">
+                        <div class="tools-container">
                             <span class="tech-tag">NLP</span>
                             <span class="tech-tag">RoBERTa</span>
-                            <span class="tech-tag">Logistic Regression</span>
                             <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
                         </div>
+                        <a href="https://github.com/dharaneshc07/Hate-Speach-Detection-" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Code
+                        </a>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-content">
                         <div class="project-header">
-                            <h3 class="project-title">Signal Noise Suppression Analysis</h3>
-                            <a href="https://github.com/dharaneshc07/voice-Suppression-using-deep-leaerning-" target="_blank" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
+                            <h3 class="project-title">Voice Suppression Deep Learning</h3>
                         </div>
                         <p class="project-description">
-                            Processed acoustic time-series data using TensorFlow to remove ambient background noise from sound signals, improving speech signal clarity by 40% through custom spectral transformation pipelines.
+                            Engineered a deep learning neural network to suppress background noise, enhancing speech clarity by 40%. Implemented using TensorFlow and Keras with custom audio processing pipelines.
                         </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
+                        <div class="tools-container">
                             <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">Signal Processing</span>
+                            <span class="tech-tag">Deep Learning</span>
+                            <span class="tech-tag">Audio Processing</span>
+                            <span class="tech-tag">Keras</span>
                         </div>
+                        <a href="https://github.com/dharaneshc07/voice-Suppression-using-deep-leaerning-" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Bank Fraud Detection System</h3>
+                        </div>
+                        <p class="project-description">
+                            Implemented an ML model to detect fraudulent bank transactions with 95% accuracy, minimizing false positives by 20%. Used ensemble classification and anomaly detection techniques.
+                        </p>
+                        <div class="tools-container">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Fraud Analytics</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                        <a href="https://github.com/dharaneshc07/Bank-fraud-detection-" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Pharmacy Management System</h3>
+                        </div>
+                        <p class="project-description">
+                            Automated pharmacy operations and inventory tracking using SQL and PHP, reducing processing time by 30% and improving transaction accuracy through relational database optimization.
+                        </p>
+                        <div class="tools-container">
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">Database Design</span>
+                            <span class="tech-tag">Relational DB</span>
+                        </div>
+                        <a href="https://github.com/dharaneshc07/Pharmacy-management-System-" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Code
+                        </a>
                     </div>
                 </div>
 
@@ -993,15 +1170,15 @@
     <!-- Extracurricular Activities -->
     <section id="activities" class="section">
         <div class="container">
-            <h2 class="section-title">Leadership & Engagement</h2>
+            <h2 class="section-title">Leadership & Activities</h2>
             <div class="activities-container">
                 
                 <div class="activity-item">
-                    <h3>Societies, Volunteering & Media Executive Committee</h3>
+                    <h3>Societies, Volunteering and Student Media Executive Committee</h3>
                     <p class="item-subtitle">Cardiff University</p>
                     <p class="item-date">Sep 2024 - Sep 2025</p>
                     <div class="item-description">
-                        <p>• Elected to represent student societies, manage community budgets, and lead operational strategic planning for university initiatives.</p>
+                        <p>• Elected to represent student societies, lead volunteering initiatives, and support student media development through strategic planning and collaboration.</p>
                     </div>
                 </div>
                 
@@ -1010,7 +1187,7 @@
                     <p class="item-subtitle">School of Mathematics, Cardiff University</p>
                     <p class="item-date">Sep 2024 - Sep 2025</p>
                     <div class="item-description">
-                        <p>• Gathered student feedback trends, analyzed satisfaction metrics, and presented insights to faculty leaders to improve academic delivery.</p>
+                        <p>• Represented student interests by facilitating effective communication with faculty and contributing to academic feedback initiatives.</p>
                     </div>
                 </div>
                 
@@ -1019,7 +1196,7 @@
                     <p class="item-subtitle">Malnad Cultural Association, Hassan</p>
                     <p class="item-date">Aug 2021 - May 2024</p>
                     <div class="item-description">
-                        <p>• Managed logistics, scheduling, and event performance tracking for multi-day intercollegiate cultural events.</p>
+                        <p>• Coordinated cultural events and represented the college in prestigious national competitions including Incridea, VTU Youth Festival, and Sargam.</p>
                     </div>
                 </div>
 
@@ -1086,7 +1263,7 @@
 
         // ===== SCROLL ANIMATIONS =====
         const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.timeline-item, .project-card, .skill-category-card, .activity-item');
+            const elements = document.querySelectorAll('.timeline-item, .project-card, .skill-category-card, .activity-item, .info-card');
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
                 const screenPosition = window.innerHeight / 1.2;
@@ -1097,7 +1274,7 @@
             });
         };
 
-        document.querySelectorAll('.timeline-item, .project-card, .skill-category-card, .activity-item').forEach(element => {
+        document.querySelectorAll('.timeline-item, .project-card, .skill-category-card, .activity-item, .info-card').forEach(element => {
             element.style.opacity = '0';
             element.style.transform = 'translateY(20px)';
             element.style.transition = 'all 0.4s ease';
@@ -1108,7 +1285,7 @@
 
         // ===== VANILLA TILT =====
         if (typeof VanillaTilt !== 'undefined') {
-            VanillaTilt.init(document.querySelectorAll(".skill-category-card, .project-card"), {
+            VanillaTilt.init(document.querySelectorAll(".skill-category-card, .project-card, .info-card"), {
                 max: 10,
                 speed: 400,
                 glare: true,
@@ -1121,10 +1298,10 @@
         const typewriterElement = document.querySelector('.typewriter');
         const words = [
             "Data Analyst.",
+            "Machine Learning Specialist.",
+            "Prompt Engineering Enthusiast.",
             "SQL & Python Specialist.",
-            "Dashboard Developer.",
-            "Business Intelligence Enthusiast.",
-            "Data Storyteller."
+            "Dashboard Developer."
         ];
 
         let wordIndex = 0;
