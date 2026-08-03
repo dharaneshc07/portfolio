@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dharanesh | Data Scientist & Developer Portfolio</title>
-    <!-- Add this inside your <head> tag -->
-    <meta name="description" content="Dharanesh Chandrashekar - Data Scientist Portfolio featuring projects, skills, experience, education, and certifications.">
-    <meta name="keywords" content="Dharanesh Chandrashekar, Data Science Portfolio, Machine Learning, AI, Developer, Python, Cardiff">
+    <title>Dharanesh | Data Analyst Portfolio</title>
+    
+    <meta name="description" content="Dharanesh Chandrashekar - Data Analyst Portfolio featuring projects, skills, experience, education, and certifications.">
+    <meta name="keywords" content="Dharanesh Chandrashekar, Data Analyst Portfolio, SQL, Python, Power BI, Data Visualization, Analytics, Cardiff">
     <meta name="author" content="Dharanesh Chandrashekar">
-    <meta property="og:title" content="Dharanesh Chandrashekar - Portfolio">
-    <meta property="og:description" content="Showcasing my work in data science, machine learning, and development.">
+    <meta property="og:title" content="Dharanesh Chandrashekar - Data Analyst Portfolio">
+    <meta property="og:description" content="Showcasing my work in data analysis, SQL querying, data visualization, and statistical modeling.">
     <meta property="og:url" content="https://dharanesh.vercel.app/">
     <meta property="og:type" content="website">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
             --primary: #3b82f6;
@@ -24,7 +25,7 @@
             --light: #1f2937;
             --dark: #111827;
             --highlight: #f59e0b;
-            --card-bg: #1f2937;
+            --card-bg: rgba(31, 41, 55, 0.7);
         }
         
         * {
@@ -64,40 +65,36 @@
             z-index: 9999;
             transition: transform 0.1s ease;
         }
-       
-        
+
         /* ===== Base Layout ===== */
         .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-left: 40px;
-    padding-right: 40px;
-}
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
 
-
-
-        
         section {
             padding: 60px 0;
         }
         
         /* ===== Header ===== */
-       header {
-        padding: 25px;
-        position: sticky;
-        top: 0;
-        background-color: rgba(17, 24, 39, 0.95);
-        z-index: 100;
-        backdrop-filter: blur(5px);
-    }
+        header {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            background-color: rgba(17, 24, 39, 0.95);
+            z-index: 100;
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-    header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    }
-
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
         
         .logo {
             font-size: 1.5rem;
@@ -143,35 +140,37 @@
         }
         
         /* ===== Hero Section ===== */
-       .hero {
-        padding: 80px 0 60px;
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        align-items: flex-start;
-    }
+        .hero {
+            padding: 80px 0 60px;
+        }
 
-
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: flex-start;
+        }
         
         .hero h1 {
             font-size: 2.5rem;
             line-height: 1.2;
         }
         
-        .hero h1 span {
+        .hero h1 span.highlight-text {
             color: var(--primary);
         }
         
         .hero p {
             font-size: 1.1rem;
             color: #d1d5db;
-            max-width: 700px;
+            max-width: 750px;
         }
         
         .contact-info {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+            margin-top: 10px;
         }
         
         .contact-item {
@@ -211,63 +210,78 @@
         }
         
         /* ===== Skills Section ===== */
-    .skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-    gap: 15px;
-}
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
 
-.skill-card {
-    background: #ffffff;
-    border-radius: 8px;
-    padding: 12px 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(59, 130, 246, 0.1);
-}
+        .skill-category-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-.skill-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(96, 165, 250, 0.2);
-}
+        .skill-category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
 
-.skill-icon {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
-    margin-bottom: 8px;
-}
+        .skill-category-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
 
-.skill-name {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #000000;
-    text-shadow: 0 0 6px #0ff, 0 0 12px #0ff;
-    text-align: center;
-    padding-top: 4px;
-}
+        .skill-category-header i {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
 
-.skill-card:hover .skill-name {
-    color: #fff;
-    text-shadow: 0 0 10px var(--primary), 0 0 20px var(--accent);
-}
+        .skill-category-header h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
 
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-badge {
+            background-color: rgba(59, 130, 246, 0.15);
+            color: #93c5fd;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
         
         /* ===== Experience & Education ===== */
         .timeline-item {
             background-color: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             padding: 25px;
             margin-bottom: 20px;
             border-left: 4px solid var(--primary);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .timeline-item:hover {
             transform: translateX(5px);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
         }
         
         .item-header {
@@ -296,6 +310,10 @@
         .item-description {
             line-height: 1.7;
         }
+
+        .item-description p {
+            margin-bottom: 8px;
+        }
         
         .highlight {
             color: var(--highlight);
@@ -303,9 +321,14 @@
         }
 
         .module-list {
-            display: grid;
-            gap: 15px;
             margin-top: 15px;
+        }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
         }
 
         .module-item {
@@ -319,50 +342,56 @@
         }
 
         .module-item:hover {
-            transform: translateX(5px);
+            transform: translateX(3px);
             background-color: rgba(59, 130, 246, 0.2);
         }
 
         .module-icon {
             color: var(--primary);
-            font-size: 1.2rem;
-            width: 30px;
-            display: flex;
-            justify-content: center;
+            font-size: 1.1rem;
         }
 
         .module-text {
-            flex: 1;
+            font-size: 0.9rem;
         }
         
         /* ===== Projects ===== */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 25px;
         }
         
         .project-card {
             background-color: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
         }
         
         .project-content {
-            padding: 20px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
         .project-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 15px;
+            gap: 10px;
         }
         
         .project-title {
@@ -372,15 +401,17 @@
         
         .project-description {
             color: #d1d5db;
-            margin-bottom: 15px;
-            line-height: 1.7;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            flex-grow: 1;
         }
         
         .project-tech {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         
         .tech-tag {
@@ -399,32 +430,15 @@
             color: white;
             text-decoration: none;
             font-weight: 500;
-            padding: 6px 12px;
+            padding: 8px 14px;
             border-radius: 6px;
             background-color: var(--primary);
             transition: background-color 0.3s;
+            align-self: flex-start;
         }
         
         .project-link:hover {
             background-color: var(--secondary);
-        }
-
-        /* Education Section */
-        .education-container {
-            display: grid;
-            gap: 20px;
-        }
-
-        .education-item {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 25px;
-            border-left: 4px solid var(--primary);
-            transition: transform 0.3s;
-        }
-
-        .education-item:hover {
-            transform: translateX(5px);
         }
 
         /* Extracurricular Activities */
@@ -435,6 +449,9 @@
 
         .activity-item {
             background-color: var(--card-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             padding: 20px;
             border-left: 4px solid var(--primary);
@@ -450,24 +467,7 @@
             background-color: var(--card-bg);
             padding: 40px 0;
             text-align: center;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 25px;
-        }
-        
-        .social-link {
-            color: var(--text);
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            color: var(--primary);
-            transform: translateY(-3px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
         
         .copyright {
@@ -475,25 +475,31 @@
             font-size: 0.9rem;
         }
         
+        .typewriter::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+            color: var(--primary);
+            margin-left: 5px;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
         /* ===== Responsive Breakpoints ===== */
-        
-        /* Tablets (768px - 1024px) */
         @media (max-width: 1024px) {
-            .projects-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            body {
+                cursor: default !important;
             }
-            
-            .skills-container {
-                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            .cursor-dot {
+                display: none;
             }
         }
         
-        /* Small Tablets (600px - 768px) */
         @media (max-width: 768px) {
-            header {
+            header .container {
                 flex-direction: column;
                 gap: 15px;
-                padding: 15px 0;
             }
             
             nav ul {
@@ -506,7 +512,7 @@
             }
             
             section {
-                padding: 50px 0;
+                padding: 40px 0;
             }
             
             .section-title {
@@ -515,7 +521,6 @@
             }
         }
         
-        /* Mobile Devices (up to 600px) */
         @media (max-width: 600px) {
             nav ul {
                 gap: 10px;
@@ -523,14 +528,15 @@
             }
             
             nav a {
-                font-size: 0.6rem;
+                font-size: 0.85rem;
             }
+            
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 1.7rem;
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
             
             .contact-info {
@@ -541,114 +547,11 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .skills-container {
-                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-                gap: 10px;
-            }
-            
-            .skill-card {
-                padding: 10px 5px;
-            }
-            
-            .skill-icon {
-                width: 25px;
-                height: 25px;
-            }
-            
-            .skill-name {
-                font-size: 0.7rem;
-            }
-            
-            .timeline-item {
-                padding: 20px;
-            }
-            
-            .item-title {
-                font-size: 1.1rem;
-            }
         }
-        
-        /* Small Mobile Devices (up to 400px) */
-        @media (max-width: 400px) {
-            nav ul {
-                gap: 10px;
-                flex-wrap: wrap;
-            }
-            
-            nav a {
-                font-size: 0.9rem;
-            }
-            
-            .hero h1 {
-                font-size: 1.6rem;
-            }
-            
-            .section-title {
-                font-size: 1.5rem;
-            }
-        }
-        @media (max-width: 1024px) {
-    body {
-        cursor: default !important;
-    }
-}
-        .timeline-item,
-        .project-card,
-        .education-item,
-        .activity-item {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
-    }
-
-        .timeline-item:hover,
-        .project-card:hover,
-        .education-item:hover,
-        .activity-item:hover,
-        .skill-card:hover {
-        box-shadow: 0 0 20px var(--primary), 0 0 30px rgba(59, 130, 246, 0.4);
-        transition: box-shadow 0.4s ease;
-    }
-        .typewriter::after {
-        content: '|';
-        animation: blink 1s step-start infinite;
-        color: var(--primary);
-        margin-left: 5px;
-    }
-
-@keyframes blink {
-    50% { opacity: 0; }
-}
-    .footer-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 25px;
-  flex-wrap: wrap;
-}
-
-.footer-btn {
-  background-color: var(--primary);
-  color: white;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.footer-btn:hover {
-  background-color: var(--secondary);
-}
-
     </style>
 </head>
 <body>
-    <!-- Custom Cursor -->
+    <!-- Background Effects -->
     <div class="dots-bg"></div>
     <div class="cursor-dot"></div>
 
@@ -672,24 +575,27 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1><span>Hello!</span> I'm <span class="typewriter">Dharanesh Chandrashekar</span></h1>
-            <p>Thank you for taking the time to review my portfolio. I am currently seeking new job opportunities across world and would love to connect. If my skills and experience align with your needs, please feel free to reach out. I look forward to the possibility of working together.</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+07553995656">+44 7553995656</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:Dharaneshchandrashekar@gmail.com">dharaneshchandrashekar@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/dharaneshc07">dharaneshc07</i></a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                     <a href="https://www.linkedin.com/in/dharanesh-chandrashekar-47a5aa2b3/">Dharanesh Chandrashekar</i></a>
+            <div class="hero-content">
+                <h1>Hello! I'm <span class="highlight-text">Dharanesh Chandrashekar</span></h1>
+                <h2><span class="typewriter">Data Analyst & Analytics Specialist</span></h2>
+                <p>A detail-oriented Data Analyst proficient in SQL, Python, statistical modeling, and data visualization tools like Power BI and Plotly. Experienced in transforming raw complex datasets into strategic business insights, optimizing ETL processes, and building interactive performance dashboards. Seeking opportunities to drive data-informed decision-making in dynamic organizations.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+447553995656">+44 7553995656</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:Dharaneshchandrashekar@gmail.com">dharaneshchandrashekar@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/dharaneshc07" target="_blank">GitHub</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/dharanesh-chandrashekar-47a5aa2b3/" target="_blank">LinkedIn</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -700,239 +606,192 @@
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <p>I'm a motivated Data Science engineer with expertise in machine learning, statistical analysis, and data visualization. I have strong problem-solving skills and a keen interest in learning new technologies. I'm seeking a full-time role to apply my analytical expertise and technical knowledge in a dynamic, growth-oriented environment.</p>
-                <p>With multiple internships at companies like IBM and Inventeron, I've developed strong technical skills in data analysis and machine learning. My projects demonstrate my ability to build practical solutions like fraud detection systems and pharmacy management tools.</p>
-                <p>When I'm not coding, you can find me participating in hackathons or cultural events. I believe in continuous learning and regularly take online courses to stay updated with the latest technologies.</p>
+                <p>I am a Data Analyst with a solid background in Information Science Engineering and a Master's degree in Data Science and Analytics from Cardiff University. I specialize in turning ambiguous, messy data into actionable intelligence through SQL queries, statistical analysis, and interactive dashboard creation.</p>
+                <br>
+                <p>Having worked across industry internships including IBM and Inventeron, I bring practical experience in optimizing database retrieval speed, cleaning multi-source relational data, and applying quantitative models to improve operational efficiency. I thrive on collaborating with stakeholders to deliver metrics that drive revenue and operational productivity.</p>
             </div>
         </div>
     </section>
 
-<div class="skills-container">
-    <h2>TECHNICAL SKILLS</h2>
+    <!-- Technical Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-category-card">
+                    <div class="skill-category-header">
+                        <i class="fas fa-database"></i>
+                        <h3>Data Analysis & SQL</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">SQL Queries</span>
+                        <span class="skill-badge">PostgreSQL</span>
+                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">Data Wrangling</span>
+                        <span class="skill-badge">ETL Pipelines</span>
+                        <span class="skill-badge">Data Cleaning</span>
+                        <span class="skill-badge">Relational Databases</span>
+                    </div>
+                </div>
 
-    <details class="skill-category">
-        <summary class="skill-card">
-            <img src="https://cdn-icons-png.flaticon.com/512/2103/2103633.png" alt="Machine Learning" class="skill-icon">
-            <span class="skill-name">Machine Learning</span>
-        </summary>
-        <div class="skill-details">
-            <p><strong>Regression:</strong> Linear Regression, SVR, Random Forest, ANN</p>
-            <p><strong>Classification:</strong> Logistic Regression, SVM, Random Forest, LightGBM, Decision Trees, ANN</p>
-            <p><strong>Clustering:</strong> KNN, K-Means Clustering</p>
-        </div>
-    </details>
+                <div class="skill-category-card">
+                    <div class="skill-category-header">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>BI & Visualization</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Power BI</span>
+                        <span class="skill-badge">Tableau</span>
+                        <span class="skill-badge">Dashboards</span>
+                        <span class="skill-badge">Plotly & Dash</span>
+                        <span class="skill-badge">Matplotlib</span>
+                        <span class="skill-badge">Seaborn</span>
+                        <span class="skill-badge">KPI Tracking</span>
+                    </div>
+                </div>
 
-    <details class="skill-category">
-        <summary class="skill-card">
-            <img src="https://cdn-icons-png.flaticon.com/512/3079/3079167.png" alt="Mathematics & Statistics" class="skill-icon">
-            <span class="skill-name">Mathematics & Statistics</span>
-        </summary>
-        <div class="skill-details">
-            <p>Probability, Linear Algebra, Optimisation Techniques</p>
-        </div>
-    </details>
+                <div class="skill-category-card">
+                    <div class="skill-category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Programming Languages</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">PySpark</span>
+                        <span class="skill-badge">R</span>
+                        <span class="skill-badge">SAS</span>
+                        <span class="skill-badge">PHP</span>
+                        <span class="skill-badge">Shell Scripting</span>
+                    </div>
+                </div>
 
-    <details class="skill-category">
-        <summary class="skill-card">
-            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png" alt="Natural Language Processing" class="skill-icon">
-            <span class="skill-name">Natural Language Processing</span>
-        </summary>
-        <div class="skill-details">
-            <p>Syntactic Analysis, Semantic Analysis, Sentiment Analysis, Token Classification, NLP Modelling</p>
-        </div>
-    </details>
+                <div class="skill-category-card">
+                    <div class="skill-category-header">
+                        <i class="fas fa-cubes"></i>
+                        <h3>Python Libraries</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Pandas</span>
+                        <span class="skill-badge">NumPy</span>
+                        <span class="skill-badge">SciPy</span>
+                        <span class="skill-badge">Scikit-Learn</span>
+                        <span class="skill-badge">Statsmodels</span>
+                    </div>
+                </div>
 
-    <details class="skill-category">
-        <summary class="skill-card">
-            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="NLP Models & Embeddings" class="skill-icon">
-            <span class="skill-name">NLP Models & Embeddings</span>
-        </summary>
-        <div class="skill-details">
-            <p>BERT, Word2Vec</p>
-        </div>
-    </details>
+                <div class="skill-category-card">
+                    <div class="skill-category-header">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Mathematics & Statistics</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Hypothesis Testing</span>
+                        <span class="skill-badge">Probability</span>
+                        <span class="skill-badge">A/B Testing</span>
+                        <span class="skill-badge">Linear Algebra</span>
+                        <span class="skill-badge">Regression Analysis</span>
+                    </div>
+                </div>
 
-    <details class="skill-category">
-        <summary class="skill-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg" alt="Python Libraries" class="skill-icon">
-            <span class="skill-name">Python Libraries</span>
-        </summary>
-        <div class="skill-details">
-            <p>NumPy, SciPy, Pandas, scikit-learn, TensorFlow, Keras, Transformers, NLTK, Gensim, spaCy, Matplotlib, Seaborn, Plotly</p>
-        </div>
-    </details>
+                <div class="skill-category-card">
+                    <div class="skill-category-header">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Cloud & Tools</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-badge">Microsoft Azure</span>
+                        <span class="skill-badge">Databricks</span>
+                        <span class="skill-badge">Google Cloud Platform</span>
+                        <span class="skill-badge">Jupyter Notebooks</span>
+                        <span class="skill-badge">Git & GitHub</span>
+                    </div>
+                </div>
 
-    <details class="skill-category">
-        <summary class="skill-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Cloud & Data Engineering" class="skill-icon">
-            <span class="skill-name">Cloud & Data Engineering</span>
-        </summary>
-        <div class="skill-details">
-            <p>Microsoft Azure, Databricks, Google Cloud Platform (GCP), Azure Data Factory (ADF)</p>
+            </div>
         </div>
-    </details>
-
-    <details class="skill-category">
-        <summary class="skill-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" alt="Development Tools" class="skill-icon">
-            <span class="skill-name">Development Tools</span>
-        </summary>
-        <div class="skill-details">
-            <p>Jupyter Notebook, PyCharm, Visual Studio Code</p>
-        </div>
-    </details>
-
-    <details class="skill-category">
-        <summary class="skill-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Programming Languages" class="skill-icon">
-            <span class="skill-name">Programming Languages</span>
-        </summary>
-        <div class="skill-details">
-            <p>Python, PySpark</p>
-        </div>
-    </details>
-</div>
+    </section>
 
     <!-- Education Section -->
     <section id="education" class="section">
         <div class="container">
             <h2 class="section-title">Education</h2>
-            <div class="education-container">
-                <div class="timeline-item">
-                    <div class="item-header">
-                        <div>
-                            <h3 class="item-title">MSc Data Science and Analytics</h3>
-                            <p class="item-subtitle">Cardiff University</p>
-                        </div>
-                        <p class="item-date">Sep 2024 - Sep 2025</p>
+            
+            <div class="timeline-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">MSc Data Science and Analytics</h3>
+                        <p class="item-subtitle">Cardiff University</p>
                     </div>
-                    <div class="item-description">
-                        <p>Grade: <span class="highlight">Merit</span></p>
-                    </div>
-                    <div class="item-description">
-                     
-                        <div class="module-list">
-                            <p>Relevant modules:</p>
-                            <div class="module-item">
-                                
-                                <div class="module-icon">
-                                    <i class="fas fa-laptop-code"></i>
-                                </div>
-                                
-                                    <strong>Computational Data Science</strong>
-                                </div>
-                            </div>
-                            <div class="module-item">
-                                <div class="module-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                
-                                    <strong>Operational Research</strong> 
-                            </div>
-                            <div class="module-item">
-                                <div class="module-icon">
-                                    <i class="fas fa-chart-bar"></i>
-                                </div>
-                                
-                                    <strong>Statistics</strong>
-                                </div>
-                            </div>
-                            <div class="module-item">
-                                <div class="module-icon">
-                                    <i class="fas fa-robot"></i>
-                                </div>
-                                <div class="module-text">
-                                    <strong>Applied Machine Learning</strong> 
-                                </div>
-                            </div>
-                            <div class="module-item">
-                                <div class="module-icon">
-                                    <i class="fas fa-database"></i>
-                                </div>
-                                <div class="module-text">
-                                    <strong>Database and Modelling</strong>
-                                </div>
-                            </div>
-                            <div class="module-item">
-                                <div class="module-icon">
-                                    <i class="fas fa-chart-pie"></i>
-                                </div>
-                                <div class="module-text">
-                                    <strong>Data Visualization</strong>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="item-date">Sep 2024 - Sep 2025</p>
                 </div>
-                
-        <div class="container">            
-            <div class="education-container">
-                <div class="timeline-item">
-                    <div class="item-header">
-                        <div>
-                            <h3 class="item-title">B.E Information Science and Engineering</h3>
-                            <p class="item-subtitle">Malnad College of Engineering, India</p>
-                        </div>
-                        <p class="item-date">Jan 2021 - May 2024</p>
-                    </div>
-                
-                    <div class="item-description">
-                     
-                        <div class="module-list">
-                            <p>Relevant modules:</p>
+                <div class="item-description">
+                    <p>Grade: <span class="highlight">Merit</span></p>
+                    <div class="module-list">
+                        <p><strong>Key Analytics Modules:</strong></p>
+                        <div class="module-grid">
                             <div class="module-item">
-                                
-                                <div class="module-icon">
-                                    <i class="fas fa-laptop-code"></i>
-                                </div>
-                                
-                                    <strong>Python Application Programming</strong>
-                                </div>
+                                <i class="fas fa-chart-pie module-icon"></i>
+                                <span class="module-text">Data Visualization</span>
                             </div>
                             <div class="module-item">
-                                <div class="module-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                
-                                    <strong>Cryptography, Network Security and Cyber Law</strong> 
+                                <i class="fas fa-database module-icon"></i>
+                                <span class="module-text">Database & Modelling</span>
                             </div>
                             <div class="module-item">
-                                <div class="module-icon">
-                                    <i class="fas fa-chart-bar"></i>
-                                </div>
-                                
-                                    <strong>Statistics and Probablity</strong>
-                                </div>
+                                <i class="fas fa-chart-bar module-icon"></i>
+                                <span class="module-text">Applied Statistics</span>
                             </div>
                             <div class="module-item">
-                                <div class="module-icon">
-                                    <i class="fas fa-robot"></i>
-                                </div>
-                                <div class="module-text">
-                                    <strong>Computer Networks</strong> 
-                                </div>
+                                <i class="fas fa-laptop-code module-icon"></i>
+                                <span class="module-text">Computational Data Science</span>
                             </div>
                             <div class="module-item">
-                                <div class="module-icon">
-                                    <i class="fas fa-database"></i>
-                                </div>
-                                <div class="module-text">
-                                    <strong>Cloud Computing</strong>
-                                </div>
+                                <i class="fas fa-robot module-icon"></i>
+                                <span class="module-text">Applied Machine Learning</span>
                             </div>
                             <div class="module-item">
-                                <div class="module-icon">
-                                    <i class="fas fa-chart-pie"></i>
-                                </div>
-                                <div class="module-text">
-                                    <strong>Unix and Shell Programming</strong>
-                                </div>
+                                <i class="fas fa-chart-line module-icon"></i>
+                                <span class="module-text">Operational Research</span>
                             </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">B.E Information Science and Engineering</h3>
+                        <p class="item-subtitle">Malnad College of Engineering, India</p>
+                    </div>
+                    <p class="item-date">Jan 2021 - May 2024</p>
+                </div>
+                <div class="item-description">
+                    <div class="module-list">
+                        <p><strong>Key Engineering Modules:</strong></p>
+                        <div class="module-grid">
+                            <div class="module-item">
+                                <i class="fas fa-calculator module-icon"></i>
+                                <span class="module-text">Statistics & Probability</span>
+                            </div>
+                            <div class="module-item">
+                                <i class="fas fa-code module-icon"></i>
+                                <span class="module-text">Python Programming</span>
+                            </div>
+                            <div class="module-item">
+                                <i class="fas fa-cloud module-icon"></i>
+                                <span class="module-text">Cloud Computing</span>
+                            </div>
+                            <div class="module-item">
+                                <i class="fas fa-terminal module-icon"></i>
+                                <span class="module-text">Unix & Shell Scripting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -940,67 +799,65 @@
     <section id="experience" class="section">
         <div class="container">
             <h2 class="section-title">Work Experience</h2>
-            <div class="experience-container">
-                <div class="timeline-item">
-                    <div class="item-header">
-                        <div>
-                            <h3 class="item-title">Database Intern</h3>
-                            <p class="item-subtitle">IBM, India</p>
-                        </div>
-                        <p class="item-date">Oct 2023 - Jan 2024</p>
+            
+            <div class="timeline-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">Database & Analytics Intern</h3>
+                        <p class="item-subtitle">IBM, India</p>
                     </div>
-                    <div class="item-description">
-                        <p>• Optimized database handling, <span class="highlight">increasing efficiency by 30%</span> using SAS tools.</p>
-                        <p>• Improved SQL query performance, <span class="highlight">cutting processing time by 25%</span>.</p>
-                        <p>• Designed and maintained database structures, <span class="highlight">boosting data retrieval speed by 20%</span>.</p>
-                    </div>
+                    <p class="item-date">Oct 2023 - Jan 2024</p>
                 </div>
-                
-                <div class="timeline-item">
-                    <div class="item-header">
-                        <div>
-                            <h3 class="item-title">AI and ML Intern</h3>
-                            <p class="item-subtitle">Inventeron, India</p>
-                        </div>
-                        <p class="item-date">May 2023 - Aug 2023</p>
-                    </div>
-                    <div class="item-description">
-                        <p>• Enhanced sales forecasting models, <span class="highlight">improving accuracy by 15%</span> with NumPy, Pandas, and Matplotlib.</p>
-                        <p>• <span class="highlight">Increased model accuracy by 20%</span> through data cleaning, feature engineering, and EDA.</p>
-                        <p>• Optimized time series models, <span class="highlight">boosting prediction accuracy by 18%</span>.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="item-header">
-                        <div>
-                            <h3 class="item-title">Data Science Trainee</h3>
-                            <p class="item-subtitle">Open Weaver, India</p>
-                        </div>
-                        <p class="item-date">Sep 2022 - Dec 2022</p>
-                    </div>
-                    <div class="item-description">
-                        <p>• Led data integration and optimized API performance, <span class="highlight">decreasing latency by 40%</span>.</p>
-                        <p>• <span class="highlight">Enhanced platform scalability by 35%</span> and increased processing speed by 25%.</p>
-                        <p>• Improved data storage solutions, <span class="highlight">increasing retrieval speed by 20%</span>.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="item-header">
-                        <div>
-                            <h3 class="item-title">Data Science Intern</h3>
-                            <p class="item-subtitle">ICT Academy, India</p>
-                        </div>
-                        <p class="item-date">Jun 2022 - Aug 2022</p>
-                    </div>
-                    <div class="item-description">
-                        <p>• Completed <span class="highlight">5+ webinars</span> on TensorFlow, Pandas, and Spark MLlib, enhancing technical skills.</p>
-                        <p>• <span class="highlight">Improved model accuracy by 25%</span> by fine-tuning machine learning algorithms.</p>
-                        <p>• <span class="highlight">Reduced data preprocessing time by 30%</span> while maintaining model performance.</p>
-                    </div>
+                <div class="item-description">
+                    <p>• Optimized large-scale relational database handling and ETL workloads, <span class="highlight">increasing query execution efficiency by 30%</span> using SAS tools and SQL optimizations.</p>
+                    <p>• Refactored complex SQL scripts, index structures, and join operations, <span class="highlight">cutting analytics data processing time by 25%</span>.</p>
+                    <p>• Designed and maintained automated database schema structures, <span class="highlight">boosting analytical data retrieval speed by 20%</span> for reporting teams.</p>
                 </div>
             </div>
+            
+            <div class="timeline-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">Data & ML Intern</h3>
+                        <p class="item-subtitle">Inventeron, India</p>
+                    </div>
+                    <p class="item-date">May 2023 - Aug 2023</p>
+                </div>
+                <div class="item-description">
+                    <p>• Performed Exploratory Data Analysis (EDA) on quarterly retail datasets using Pandas, NumPy, and Matplotlib, <span class="highlight">improving forecasting precision by 15%</span>.</p>
+                    <p>• Prepared data pipelines through rigorous cleaning, outlier removal, and missing value imputation, <span class="highlight">increasing analytical model accuracy by 20%</span>.</p>
+                    <p>• Evaluated and tuned time series trend models to track KPI metrics, <span class="highlight">boosting prediction accuracy by 18%</span>.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">Data Science Trainee</h3>
+                        <p class="item-subtitle">Open Weaver, India</p>
+                    </div>
+                    <p class="item-date">Sep 2022 - Dec 2022</p>
+                </div>
+                <div class="item-description">
+                    <p>• Integrated data streams from multiple REST APIs and optimized query responses, <span class="highlight">decreasing latency by 40%</span> for analytics pipelines.</p>
+                    <p>• Standardized data ingestion workflows to improve analytical scalability by 35% and overall processing speed by 25%.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="item-header">
+                    <div>
+                        <h3 class="item-title">Data Analytics Intern</h3>
+                        <p class="item-subtitle">ICT Academy, India</p>
+                    </div>
+                    <p class="item-date">Jun 2022 - Aug 2022</p>
+                </div>
+                <div class="item-description">
+                    <p>• Conducted deep-dive data preprocessing and feature scaling on structured tabular datasets, <span class="highlight">reducing data preparation overhead by 30%</span>.</p>
+                    <p>• Participated in hands-on workshops for PySpark, Big Data analytics, and statistical modeling with TensorFlow and Pandas.</p>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -1009,137 +866,126 @@
         <div class="container">
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Agentic-AI to optimise expense submission process</h3>
-                            <a href="https://github.com/dharaneshc07/dissertation" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                        </div>
-                        <p class="project-description">
-                            A elf-learning Agentic-AI system for expense management, implementing OCR and a human-in-the-loop framework to achieve a significant, continuous improvement in categorization accuracy. The system integrates an Isolation Forest anomaly detection model and is deployed via a Streamlit web application.
-                        <div class="project-tech">
-                            <span class="tech-tag">Agentic-AI</span>
-                            <span class="tech-tag">Human-in-the-Loop ML</span>
-                            <span class="tech-tag">OCR</span>
-                        </div>   
-                    </div>
-                </div>
                 
                 <div class="project-card">
                     <div class="project-content">
                         <div class="project-header">
-                            <h3 class="project-title">Data Visualization</h3>
-                            <a href="https://github.com/dharaneshc07/Data-Visualization-" class="project-link">
+                            <h3 class="project-title">Interactive Global Quality of Life Dashboard</h3>
+                            <a href="https://github.com/dharaneshc07/Data-Visualization-" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i> Code
                             </a>
                         </div>
                         <p class="project-description">
-                            an interactive dashboard analyzing 237 countries’ quality of life metrics. Automated data cleaning for 10+ numerical/categorical columns, reducing preprocessing time by 30% and improving visualization accuracy.
+                            Engineered an interactive web dashboard analyzing socioeconomic metrics across 237 countries. Automated data wrangling pipelines for 10+ variables in Pandas, reducing data preprocessing time by 30% and building responsive visual insights using Plotly and Dash.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Dash</span>
                             <span class="tech-tag">Plotly</span>
                             <span class="tech-tag">Pandas</span>
-                        </div>   
+                            <span class="tech-tag">ETL</span>
+                        </div>  
                     </div>
                 </div>
-                
-                 <div class="project-card">
+
+                <div class="project-card">
                     <div class="project-content">
                         <div class="project-header">
-                            <h3 class="project-title">Hate Speech Detection</h3>
-                            <a href="https://github.com/dharaneshc07/Hate-Speach-Detection-" class="project-link">
+                            <h3 class="project-title">Agentic-AI Expense Analytics System</h3>
+                            <a href="https://github.com/dharaneshc07/dissertation" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i> Code
                             </a>
                         </div>
                         <p class="project-description">
-                            Developed a hate speech detection system using RoBERTa and traditional ML models, achieving 94% accuracy and optimizing F1-score by 15% through class balancing and threshold tuning.
+                            Built an end-to-end expense monitoring system utilizing OCR for receipt parsing and an Isolation Forest model to detect financial anomalies. Created a Streamlit user interface to visualize categorical spending patterns and facilitate human-in-the-loop review.
                         </p>
                         <div class="project-tech">
-                            <span class="tech-tag">NLPAug</span>
-                            <span class="tech-tag">RoBERTa</span>
-                            <span class="tech-tag">Logistic Regression</span>
-                        </div>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Anomaly Detection</span>
+                            <span class="tech-tag">OCR</span>
+                            <span class="tech-tag">Streamlit</span>
+                        </div>  
                     </div>
                 </div>
-                
-                 <div class="project-card">
+
+                <div class="project-card">
                     <div class="project-content">
                         <div class="project-header">
-                            <h3 class="project-title">Voice Suppression Using Deep Learning</h3>
-                            <a href="https://github.com/dharaneshc07/voice-Suppression-using-deep-leaerning-" class="project-link">
+                            <h3 class="project-title">Banking Transaction Fraud Analytics</h3>
+                            <a href="https://github.com/dharaneshc07/Bank-fraud-detection-" target="_blank" class="project-link">
                                 <i class="fab fa-github"></i> Code
                             </a>
                         </div>
                         <p class="project-description">
-                            Developed a deep learning model to suppress background noise, enhancing speech clarity by 40%. Implemented using TensorFlow and Keras with custom audio processing pipelines.
+                            Analyzed imbalanced financial transaction records to detect fraudulent activity. Employed SMOTE techniques and Random Forest classifiers to achieve 95% detection accuracy while lowering false positive error rates by 20%.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Statistical Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Pharmacy Operations & Inventory SQL System</h3>
+                            <a href="https://github.com/dharaneshc07/Pharmacy-management-System-" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                        <p class="project-description">
+                            Architected a relational database management tool using SQL and PHP to track pharmacy stock levels and orders. Streamlined query search speeds, resulting in a 30% improvement in inventory update workflows.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Relational DB</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">Database Architecture</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Text Classification & Sentiment Analytics</h3>
+                            <a href="https://github.com/dharaneshc07/Hate-Speach-Detection-" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                        <p class="project-description">
+                            Performed text mining and sentiment classification across unstructured social datasets using RoBERTa and classical NLP techniques, attaining 94% classification accuracy with tuned precision-recall metrics.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">RoBERTa</span>
+                            <span class="tech-tag">Logistic Regression</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Signal Noise Suppression Analysis</h3>
+                            <a href="https://github.com/dharaneshc07/voice-Suppression-using-deep-leaerning-" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                        <p class="project-description">
+                            Processed acoustic time-series data using TensorFlow to remove ambient background noise from sound signals, improving speech signal clarity by 40% through custom spectral transformation pipelines.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">Audio Processing</span>
+                            <span class="tech-tag">Signal Processing</span>
                         </div>
                     </div>
                 </div>
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Bank Fraud Detection</h3>
-                            <a href="https://github.com/dharaneshc07/Bank-fraud-detection-" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                        </div>
-                        <p class="project-description">
-                            Implemented an ML model to detect fraudulent transactions with 95% accuracy, minimizing false positives by 20%. Used ensemble methods and anomaly detection techniques.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Scikit-learn</span>
-                            <span class="tech-tag">Fraud Detection</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Drowsiness Detection</h3>
-                            <a href="https://github.com/dharaneshc07/Drowsiness-detection-" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                        </div>
-                        <p class="project-description">
-                            Real-time driver monitoring system using OpenCV and CNNs. Achieved 95% accuracy in detecting drowsy states through eye aspect ratio analysis with configurable alerts.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">OpenCV</span>
-                            <span class="tech-tag">CNN</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Pharmacy Management System</h3>
-                            <a href="https://github.com/dharaneshc07/Pharmacy-management-System-" class="project-link">
-                                <i class="fab fa-github"></i> Code
-                            </a>
-                        </div>
-                        <p class="project-description">
-                            Automated pharmacy operations using SQL and PHP, reducing processing time by 30% and improving accuracy through barcode integration. Features inventory tracking and prescription management.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">SQL</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">Database Design</span>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -1147,23 +993,24 @@
     <!-- Extracurricular Activities -->
     <section id="activities" class="section">
         <div class="container">
-            <h2 class="section-title">Extracurricular Activities</h2>
+            <h2 class="section-title">Leadership & Engagement</h2>
             <div class="activities-container">
-                 <div class="activity-item">
-                    <h3>Societies, Volunteering and Student Media Executive Committee</h3>
+                
+                <div class="activity-item">
+                    <h3>Societies, Volunteering & Media Executive Committee</h3>
                     <p class="item-subtitle">Cardiff University</p>
-                    <p class="item-date">Sep 2024 - Sep 2025 </p>
+                    <p class="item-date">Sep 2024 - Sep 2025</p>
                     <div class="item-description">
-                        <p>• Elected to represent and advocate for student societies, lead volunteering initiatives, and support student media development through strategic planning and collaboration..</p>
+                        <p>• Elected to represent student societies, manage community budgets, and lead operational strategic planning for university initiatives.</p>
                     </div>
                 </div>
                 
                 <div class="activity-item">
                     <h3>Student Representative</h3>
                     <p class="item-subtitle">School of Mathematics, Cardiff University</p>
-                    <p class="item-date">Sep 2024 - Sep 2025 </p>
+                    <p class="item-date">Sep 2024 - Sep 2025</p>
                     <div class="item-description">
-                        <p>• Represented student interests by facilitating effective communication with faculty and contributing to academic and community development initiatives.</p>
+                        <p>• Gathered student feedback trends, analyzed satisfaction metrics, and presented insights to faculty leaders to improve academic delivery.</p>
                     </div>
                 </div>
                 
@@ -1172,164 +1019,140 @@
                     <p class="item-subtitle">Malnad Cultural Association, Hassan</p>
                     <p class="item-date">Aug 2021 - May 2024</p>
                     <div class="item-description">
-                        <p>• Coordinated cultural events and represented the college in prestigious national and state-level competitions, including Incridea (2022, 2024), VTU Youth Festival (2024), and Sargam (2023).</p>
+                        <p>• Managed logistics, scheduling, and event performance tracking for multi-day intercollegiate cultural events.</p>
                     </div>
                 </div>
-                
-                <div class="activity-item">
-                    <h3>Athlete</h3>
-                    <p class="item-subtitle">CBSE Zone Level Competition, Chennai</p>
-                    <p class="item-date">Dec 2017</p>
-                    <div class="item-description">
-                        <p>• Competed in the CBSE Zone Level Competition in 2017, showcasing athletic skills and teamwork.</p>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="content">
+    <footer>
         <div class="container">
-
-            <p class="copyright">© 2025 Dharanesh Chandrashekar. All rights reserved.</p>
+            <p class="copyright">© 2026 Dharanesh Chandrashekar. All rights reserved.</p>
         </div>
     </footer>
     
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
 
-<script>
-window.addEventListener('DOMContentLoaded', () => {
-    // ===== CUSTOM CURSOR =====
-    if (window.innerWidth > 1024) {
-        const cursorDot = document.querySelector('.cursor-dot');
-        const dots = [];
-        const dotCount = 12;
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+        // ===== CUSTOM CURSOR =====
+        if (window.innerWidth > 1024) {
+            const cursorDot = document.querySelector('.cursor-dot');
+            const dots = [];
+            const dotCount = 8;
 
-        for (let i = 0; i < dotCount; i++) {
-            const dot = document.createElement('div');
-            dot.className = 'cursor-dot';
-            dot.style.width = `${20 - (i * 1.5)}px`;
-            dot.style.height = `${20 - (i * 1.5)}px`;
-            dot.style.opacity = `${1 - (i * 0.08)}`;
-            dot.style.transition = `transform 0.${i + 1}s ease, opacity 0.${i + 1}s ease`;
-            document.body.appendChild(dot);
-            dots.push(dot);
-        }
-
-        document.addEventListener('mousemove', (e) => {
-            const { clientX: x, clientY: y } = e;
-            cursorDot.style.left = `${x}px`;
-            cursorDot.style.top = `${y}px`;
-            dots.forEach((dot, index) => {
-                setTimeout(() => {
-                    dot.style.left = `${x}px`;
-                    dot.style.top = `${y}px`;
-                }, index * 30);
-            });
-        });
-    } else {
-        // Remove all custom cursor elements on tablets/mobiles
-        document.querySelectorAll('.cursor-dot').forEach(dot => dot.remove());
-        document.body.style.cursor = 'default';
-    }
-
-    // ===== SMOOTH SCROLL =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // ===== SCROLL ANIMATIONS =====
-    const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.timeline-item, .project-card, .skill-card, .activity-item, .education-item, .module-item');
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
-            if (elementPosition < screenPosition) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
+            for (let i = 0; i < dotCount; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'cursor-dot';
+                dot.style.width = `${16 - (i * 1.5)}px`;
+                dot.style.height = `${16 - (i * 1.5)}px`;
+                dot.style.opacity = `${0.8 - (i * 0.08)}`;
+                dot.style.transition = `transform 0.${i + 1}s ease, opacity 0.${i + 1}s ease`;
+                document.body.appendChild(dot);
+                dots.push(dot);
             }
-        });
-    };
 
-    document.querySelectorAll('.timeline-item, .project-card, .skill-card, .activity-item, .education-item, .module-item').forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'all 0.5s ease';
-    });
-
-    window.addEventListener('scroll', animateOnScroll);
-    window.addEventListener('load', animateOnScroll);
-
-    // ===== VANILLA TILT =====
-    VanillaTilt.init(document.querySelectorAll(
-      ".skill-card, .timeline-item, .project-card, .education-item, .activity-item"
-    ), {
-      max: 15,
-      speed: 400,
-      glare: true,
-      "max-glare": 0.2,
-      scale: 1.03,
-      gyroscope: true 
-    });
-
-
-    // ===== TYPEWRITER EFFECT =====
-    const typewriterElement = document.querySelector('.typewriter');
-    const words = ["learning every day.","exploring Data Science.","building projects.","curious about tech.","growing as a developer.","passionate about code.","solving problems.",
-  "experimenting with Python.",
-  "learning from mistakes.",
-  "debugging patiently.",
-  "writing clean code.",
-  "diving into AI basics.",
-  "dreaming in algorithms.",
-  "curious about machine learning.",
-  "eager to collaborate.",
-  "a student of innovation.",
-  "open to challenges.",
-  "building my first portfolio."
-];
-
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    function type() {
-        const currentWord = words[wordIndex];
-        const visibleText = currentWord.substring(0, charIndex);
-        typewriterElement.textContent = visibleText;
-
-        if (!isDeleting && charIndex < currentWord.length) {
-            charIndex++;
-            setTimeout(type, 120);
-        } else if (isDeleting && charIndex > 0) {
-            charIndex--;
-            setTimeout(type, 60);
-        } else {
-            isDeleting = !isDeleting;
-            if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
-            setTimeout(type, 1000);
+            document.addEventListener('mousemove', (e) => {
+                const { clientX: x, clientY: y } = e;
+                if(cursorDot) {
+                    cursorDot.style.left = `${x}px`;
+                    cursorDot.style.top = `${y}px`;
+                }
+                dots.forEach((dot, index) => {
+                    setTimeout(() => {
+                        dot.style.left = `${x}px`;
+                        dot.style.top = `${y}px`;
+                    }, index * 25);
+                });
+            });
         }
-    }
 
-    type();
-});
-</script>
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
 
+        // ===== SCROLL ANIMATIONS =====
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.timeline-item, .project-card, .skill-category-card, .activity-item');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        document.querySelectorAll('.timeline-item, .project-card, .skill-category-card, .activity-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'all 0.4s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // ===== VANILLA TILT =====
+        if (typeof VanillaTilt !== 'undefined') {
+            VanillaTilt.init(document.querySelectorAll(".skill-category-card, .project-card"), {
+                max: 10,
+                speed: 400,
+                glare: true,
+                "max-glare": 0.15,
+                scale: 1.02
+            });
+        }
+
+        // ===== TYPEWRITER EFFECT =====
+        const typewriterElement = document.querySelector('.typewriter');
+        const words = [
+            "Data Analyst.",
+            "SQL & Python Specialist.",
+            "Dashboard Developer.",
+            "Business Intelligence Enthusiast.",
+            "Data Storyteller."
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentWord = words[wordIndex];
+            const visibleText = currentWord.substring(0, charIndex);
+            if(typewriterElement) {
+                typewriterElement.textContent = visibleText;
+            }
+
+            if (!isDeleting && charIndex < currentWord.length) {
+                charIndex++;
+                setTimeout(type, 100);
+            } else if (isDeleting && charIndex > 0) {
+                charIndex--;
+                setTimeout(type, 50);
+            } else {
+                isDeleting = !isDeleting;
+                if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(type, 1200);
+            }
+        }
+
+        type();
+    });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
