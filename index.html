@@ -434,6 +434,18 @@
             top: -4px;
         }
 
+        .publication-link, .cert-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .publication-link:hover, .cert-link:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
         .badge-impact {
             display: inline-block;
             background-color: rgba(245, 158, 11, 0.2);
@@ -444,6 +456,26 @@
             font-size: 0.8rem;
             margin-top: 5px;
             font-weight: 600;
+        }
+
+        .paper-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 4px 10px;
+            background-color: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: var(--text);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .paper-button:hover {
+            background-color: var(--primary);
+            color: #fff;
         }
         
         /* ===== Projects ===== */
@@ -999,14 +1031,20 @@
                 
                 <!-- Publications -->
                 <div class="info-card">
-                    <h3><i class="fas fa-newspaper"></i> Publications</h3>
+                    <h3><i class="fas fa-file-pdf"></i> Publications</h3>
                     <ul class="card-list">
                         <li>
-                            <strong>“Speech Background Voice Suppression with Deep Learning”</strong>
+                            <a href="https://www.wjert.org/admin/assets/article_issue/77042024/1714386923.pdf" target="_blank" class="publication-link">
+                                “Speech Background Voice Suppression with Deep Learning”
+                            </a>
                             <br>
                             Published in <em>World Journal of Engineering Research and Technology (WJERT)</em>.
                             <br>
                             <span class="badge-impact">SJIF Impact Factor: 7.029</span>
+                            <br>
+                            <a href="https://www.wjert.org/admin/assets/article_issue/77042024/1714386923.pdf" target="_blank" class="paper-button">
+                                <i class="fas fa-external-link-alt"></i> Read Full Paper (PDF)
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -1019,16 +1057,28 @@
                             <strong>Microsoft Certified: Azure Data Fundamentals (DP-900)</strong>
                             <br>
                             <small>Microsoft</small>
+                            <br>
+                            <a href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=456&cvid=9GF8kKI3BGAFtBvq001DYQ==" target="_blank" class="paper-button">
+                                <i class="fas fa-award"></i> Verify Certificate
+                            </a>
                         </li>
                         <li>
                             <strong>Using BigQuery ML for Inference</strong>
                             <br>
                             <small>Google Skill Badge</small>
+                            <br>
+                            <a href="https://www.skills.google/public_profiles/b7f5410c-1577-413e-8302-4c00fc1a76bf/badges/16255586?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share" target="_blank" class="paper-button">
+                                <i class="fas fa-award"></i> View Badge
+                            </a>
                         </li>
                         <li>
                             <strong>Advanced SQL Course</strong>
                             <br>
                             <small>Kaggle Certification</small>
+                            <br>
+                            <a href="https://www.kaggle.com/learn/certification/dharanesh75/advanced-sql" target="_blank" class="paper-button">
+                                <i class="fas fa-award"></i> Verify Certificate
+                            </a>
                         </li>
                     </ul>
                 </div>
